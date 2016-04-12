@@ -1,0 +1,20 @@
+
+<section ng-controller="AboutController as about">
+    <div ui-content-for="title">
+        <span>{{about.title}}</span>
+    </div>
+
+    <div class="list-group text-center">
+        <div class="list-group-item list-group-item-home">
+            <h1>
+                {{about.info}}
+            </h1>
+        </div>
+        <div class="list-group-item">
+            <h5>versao: {{about.version}}</h5>
+        </div>
+        <div class="list-group-item">
+            <h5>dev: {{about.developer}}</h5>
+        </div>
+    </div>
+</section>

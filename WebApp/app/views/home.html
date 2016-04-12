@@ -1,0 +1,32 @@
+<section ng-controller="HomeController as home">
+    <div class="scrollable">
+        <div class="scrollable-content">
+            <ul class="list-group">
+                <li class="list-group-item" ng-click="home.goTo('alexRepos')">
+                    <i class="fa fa-user pull-left text-primary feature-icon-menu"></i>
+                    <h4 class="section menu-item">
+                        Reposit&#243;rios do Alexandre<i class="fa fa-chevron-right pull-right"></i>
+                    </h4>
+                </li>
+                <li class="list-group-item" ng-click="home.goTo('repos')">
+                    <i class="fa fa-folder pull-left text-primary feature-icon-menu"></i>
+                    <h4 class="section menu-item">
+                        Reposit&#243;rios<i class="fa fa-chevron-right pull-right"></i>
+                    </h4>
+                </li>
+                <li class="list-group-item" ng-click="home.goTo('favourites')">
+                    <i class="fa fa-star pull-left text-primary feature-icon-menu"></i>
+                    <h4 class="section menu-item ">
+                        Favoritos<i class="fa fa-chevron-right pull-right"></i>
+                    </h4>
+                </li>                
+                <li class="list-group-item" ng-click="home.goTo('about')">
+                    <i class="fa fa-question pull-left feature-icon-menu"></i>
+                    <h4 class="section menu-item ">
+                        Sobre<i class="fa fa-chevron-right pull-right"></i>
+                    </h4>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

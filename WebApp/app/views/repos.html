@@ -1,0 +1,37 @@
+<section ng-controller="ReposController as vm">
+    <div ui-content-for="title">
+        {{vm.title}} <span class="badge"> {{vm.Items.length}}</span>
+    </div>
+
+    <div class="scrollable" ui-state="searchBar">
+
+        <div ui-content-for="navbarAction">
+            <div class="btn" ui-toggle='searchBar'>
+                <span ui-hide="searchBar"><i class="fa fa-search"></i></span>
+                <span ui-show="searchBar"><i class="fa fa-search-minus"></i></span>
+            </div>
+        </div>
+
+        <div class="scrollable-content section search" ng-if="Ui.active('searchBar')">
+            <input type="search"
+                   class="form-control"
+                   ng-model="vm.repoSearch"
+                   ng-model-options="{debounce:900}"
+                   placeholder="Digite um nome de repositorio..." />
+        </div>
+
+        <div class="scrollable-content">
+            <ul class="list-group">
+                <li ng-repeat="item in vm.Items" ng-click="vm.goToRepo(item.Id)" class="list-group-item">
+                    <i class="fa fa-folder pull-left text-primary feature-icon-menu"></i>
+                    <h5 class="media-heading">
+                        {{item.Name}} <i class="fa fa-chevron-right pull-right"></i>
+                    </h5>
+                    <h5 class="media-heading">
+                        {{item.Full_Name}}
+                    </h5>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

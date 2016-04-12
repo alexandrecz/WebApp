@@ -1,0 +1,46 @@
+﻿<section ng-controller="RepoController as vm">
+    <div ui-content-for="navbarMenu">
+        <div class="btn" ng-click="vm.goBack()">
+            <i class="fa fa-chevron-left"></i>
+        </div>
+    </div>
+    <div ui-content-for="title">
+        <span>{{vm.title}}</span>
+    </div>
+
+    <div class="section">
+
+        <div class="list-group">
+            <div class="list-group-item">
+                <label class="text-primary">nome</label>
+                <h5 class="media-heading">{{vm.model.Name}}</h5>
+
+            </div>
+            <div class="list-group-item">
+                <label class="text-primary"> descricao</label>
+                <h5 class="media-heading">{{vm.model.Description}}</h5>
+
+            </div>
+            <div class="list-group-item">
+                <label class="text-primary">linguagem</label>
+                <h5 class="media-heading">{{vm.model.Language}}</h5>
+
+            </div>
+            <div class="list-group-item">
+                <label class="text-primary">dono</label>
+                <h5 class="media-heading">{{vm.model.Owner.Login}}</h5>
+            </div>
+            <div class="list-group-item">
+                <label class="text-primary">ultima atualizacao</label>
+                <h5 class="media-heading">
+                    <data-label-color val="{{vm.model.Updated_At}}" condition="vm.isOutDated"></data-label-color>
+                </h5>
+            </div>
+            <div class="form-group">
+                <label>Favorito</label>
+                <ui-switch ng-model="vm.model.IsFavourite"></ui-switch>
+            </div>
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+
+    <title>Way2 - WebTest</title>
+
+    <!-- AngularUI references -->
+    <link href="dist/css/mobile-angular-ui-hover.css" rel="stylesheet" />
+    <link href="dist/css/mobile-angular-ui-base.css" rel="stylesheet" />
+    <link href="dist/css/mobile-angular-ui-migrate.css" rel="stylesheet" />
+
+    <link href="css/index.css" rel="stylesheet" />
+
+
+    <script src="dist/js/angular.js"></script>
+    <script src="dist/js/angular-route.js"></script>
+    <script src="dist/js/mobile-angular-ui.min.js"></script>
+    <script src="dist/js/mobile-angular-ui.gestures.js"></script>
+    <script src="dist/js/moment.js"></script>
+
+
+    <script src="app/app.js"></script>
+    <script src="app/app.routes.js"></script>
+    <script src="app/directives/labelColorDirective.js"></script>
+
+    <script src="app/controllers/homeController.js"></script>
+    <script src="app/controllers/favouriteController.js"></script>
+    <script src="app/controllers/favouritesController.js"></script>
+    <script src="app/controllers/alexRepoController.js"></script>
+    <script src="app/controllers/alexReposController.js"></script>
+    <script src="app/controllers/repoController.js"></script>
+    <script src="app/controllers/reposController.js"></script>
+    <script src="app/controllers/aboutController.js"></script>
+
+</head>
+<body ng-app="app">
+
+    <!-- Sidebars -->
+    <div ng-include="'app/views/sidebar.html'"
+         ui-track-as-search-param='true'
+         class="sidebar sidebar-left"></div>
+
+    <!-- App NavBar -->
+    <div class="app" ng-swipe-right='Ui.turnOn("uiSidebarLeft")' ng-swipe-left='Ui.turnOff("uiSidebarLeft")' ng-controller="HomeController as home">
+        <div class="navbar navbar-app navbar-absolute-top" ng-hide="$root.title===undefined">
+            <div class="navbar-brand navbar-brand-center" ui-yield-to="title">
+                Way2 - WebTest
+            </div>
+            <div class="btn-group pull-left" ui-yield-to="navbarMenu">
+                <div ui-toggle="uiSidebarLeft" class="btn sidebar-toggle">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </div>
+            <div class="btn-group pull-right" ui-yield-to="navbarAction">
+            </div>
+        </div>
+
+        <!-- App Body -->
+        <div class="app-body">
+            <div class="app-content">
+                <ng-view></ng-view>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
