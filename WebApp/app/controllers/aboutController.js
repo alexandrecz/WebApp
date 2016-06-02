@@ -10,7 +10,7 @@
         var vm = this;
 
         vm.title = 'Sobre';
-        vm.info = 'Way2 WebTest';
+        vm.info = 'WebApp -  Angular.js  + WebApi .NET';
         vm.version = 'beta';
         vm.developer = 'alexandre czechowicz';
     }
